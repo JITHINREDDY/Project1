@@ -1,6 +1,7 @@
 package com.controller;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,14 +13,20 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.model.User;
 
-//import com.dao.UserDao;
-//import com.daoimpl.UserDaoImpl;
-//import com.model.User;
+import com.dao.UserDao;
+import com.daoImpl.UserDaoImpl;
+import com.model.User;
 
 @Controller
 
 public class HomeController
 {
+	
+//	
+//	@Autowired
+//	private UserDaoImpl  userDaoImpl;
+	
+	
 	@RequestMapping("/")
 		public String index()
 		{
@@ -40,12 +47,18 @@ public class HomeController
 
 
 	@RequestMapping("/login")
-		public ModelAndView goToLogin()
-		{
-			ModelAndView mav= new ModelAndView();
-			mav.setViewName("login");
-			return mav;
-		}
+	public String login()
+	{
+		return "login";
+	}
+
+	@RequestMapping("/goTologin")
+	public ModelAndView goToLogin()
+	{
+		ModelAndView mav=new ModelAndView();
+		mav.setViewName("login");
+		return mav;
+	}
 
 	@RequestMapping(value="/addUser",method=RequestMethod.POST)
 	public String insertUser(@Validated @ModelAttribute("user")User user,BindingResult result)
@@ -61,33 +74,40 @@ public class HomeController
 		System.out.println("@");
 		System.out.println();
 		
-		System.out.println("Hello bewakoof");
+		System.out.println("Hello ");
 		return "login";
 		
 	}
-}
-//	@RequestMapping(value="/saveregister", method=RequestMethod.POST)
-//		public ModelAndView saveRegister(@ModelAttribute("user") User user, BindingResult result)
-//		{
-//			ModelAndView mav=new ModelAndView ();
-//			if(result.hasErrors())
-//			{
-//				mav.setViewName("signup");
-//				return mav;
-//			}
-//			else
-//			{
-//				user.setRole("ROLE_USER");// user and admin
-//				UserDaoImpl.insertUser(user);
-//				mav.setViewName("redirect:/login");
-//				return mav;
-//			}
-//	
-	//	} 
-//
-//public String login()
-//{
-//	return "login";
-//}
+	
 
+
+
+	@RequestMapping(value="/saveregister", method=RequestMethod.POST)
+		public ModelAndView saveRegister(@ModelAttribute("user") User user, BindingResult result)
+		{
+			ModelAndView mav=new ModelAndView ();
+			if(result.hasErrors())
+			{
+				mav.setViewName("signup");
+				return mav;
+			}
+			else
+			{
+				
+				user.setRole("ROLE_USER");// user and admin
+				
+				
+				UserDaoImpl.insertUser(user);
+				mav.setViewName("redirect:/goTologin");
+				return mav;
+			}
+		
+	} 
+
+/*public String login()
+{
+	return "login";
+}*/
+
+}
 

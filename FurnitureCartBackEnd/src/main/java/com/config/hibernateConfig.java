@@ -15,12 +15,12 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.dao.UserDao;
-import com.daoimpl.UserDaoImpl;
+import com.daoImpl.UserDaoImpl;
 //import com.model.Category;
 import com.model.User;
 
 @Configuration
-@ComponentScan("com.*")
+@ComponentScan("com")
 @EnableTransactionManagement
 public class hibernateConfig {
 	

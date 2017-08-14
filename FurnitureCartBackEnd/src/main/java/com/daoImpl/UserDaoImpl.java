@@ -1,4 +1,4 @@
-package com.daoimpl;
+package com.daoImpl;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -41,10 +41,12 @@ public class UserDaoImpl implements UserDao
 		//yg code	public boolean saveUser(User user);
 
 	}
-
 //	public void saveUser(User user) {
 //		// TODO Auto-generated method stub
 //		
 //	}
+
+
+
 	
 }

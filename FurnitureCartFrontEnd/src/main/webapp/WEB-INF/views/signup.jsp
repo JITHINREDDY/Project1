@@ -31,7 +31,7 @@
 
 <body>
 <!--<form:form commandName="user" method="post" action="addUser">-->
-	<form class="form-horizontal" commandName="user" method="post" action="addUser">
+	<form class="form-horizontal" commandName="user" method="post" action="saveregister">
 	<form:errors path="*" cssClass="errStyle" element="div"/>
 	
 <fieldset>

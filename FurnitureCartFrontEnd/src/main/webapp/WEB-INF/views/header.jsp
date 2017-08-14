@@ -41,8 +41,8 @@
           </ul>
         </li>
         <li><a href="#">Portfolio</a></li>
-        <li><a href="signup">Signup</a></li>
-        <li><a href="login">Login</a></li>
+        <li><a href="${pageContext.request.contextPath}/signup">Signup</a></li>
+        <li><a href="${pageContext.request.contextPath}/goTologin">Login</a></li>
         
         
       <!--  <li class="dropdown">

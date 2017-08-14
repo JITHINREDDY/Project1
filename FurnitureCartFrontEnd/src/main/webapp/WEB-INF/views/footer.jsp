@@ -15,7 +15,7 @@
 <title>Insert title here</title>
 <link href="/css/footercss.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body> 
 
 <!--footer start from here-->
 
