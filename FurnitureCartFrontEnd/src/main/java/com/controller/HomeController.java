@@ -97,7 +97,7 @@ public class HomeController
 				user.setRole("ROLE_USER");// user and admin
 				
 				
-				UserDaoImpl.insertUser(user);
+//				UserDaoImpl.insertUser(user);
 				mav.setViewName("redirect:/goTologin");
 				return mav;
 			}

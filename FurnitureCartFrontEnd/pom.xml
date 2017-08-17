@@ -8,8 +8,14 @@
   <name>FurnitureCartFrontEnd Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
-   
-       
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+        
    <!-- com.h2database/h2  -->
 <dependency>
     <groupId>com.h2database</groupId>
@@ -17,20 +23,8 @@
     <version>1.4.195</version>
     <scope>test</scope>
 </dependency>
-
-  <!--org.hibernate/hibernate-core -->
-<dependency>
-    <groupId>org.hibernate</groupId>
-    <artifactId>hibernate-core</artifactId>
-    <version>5.2.10.Final</version>
-</dependency>
-  <!-- org.hibernate/hibernate-validator -->
-<dependency>
-    <groupId>org.hibernate</groupId>
-    <artifactId>hibernate-validator</artifactId>
-    <version>5.4.1.Final</version>
-</dependency>
-  <!--org.springframework/spring-context -->
+<!--============  spring dependencies============-->
+<!--org.springframework/spring-context -->
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-context</artifactId>
@@ -48,7 +42,6 @@
     <artifactId>spring-orm</artifactId>
     <version>4.3.9.RELEASE</version>
 </dependency>
-
 <!-- org.springframework/spring-web -->
 <dependency>
     <groupId>org.springframework</groupId>
@@ -67,21 +60,14 @@
     <artifactId>jstl</artifactId>
     <version>1.2</version>
 </dependency>
+ <!-- junit/junit -->
 
-<!-- - adding backend pom in the front end project -->
-<dependency>
-<groupId>com.niit</groupId>
-  <artifactId>FurnitureCartBackEnd</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-</dependency>
-
-  <!-- junit/junit -->
 <dependency>
     <groupId>junit</groupId>
     <artifactId>junit</artifactId>
     <version>4.12</version>
     <scope>test</scope>
-</dependency>
+</dependency> 
         
     <!-- javaee-api -->
 <dependency>
@@ -99,9 +85,25 @@
     <scope>provided</scope>
 </dependency>
 
-      </dependencies>
+<!-- - adding backend pom in the front end project -->
+<dependency>
+<groupId>com.niit</groupId>
+  <artifactId>FurnitureCartBackEnd</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+</dependency>
+
+  <!-- junit/junit -->
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.12</version>
+    <scope>test</scope>
+</dependency>
+        
+ 
+ </dependencies>
   <build>
-  <!-- to work with latest version of JRE -->
+     <!-- to work with latest version of JRE -->
            <plugins>
                 <plugin>
                      <artifactId>maven-compiler-plugin</artifactId>
@@ -120,6 +122,6 @@
                      </configuration>
                 </plugin>
            </plugins>
-    <finalName>FurnitureCartFrontEnd</finalName>
+      <finalName>FurnitureCartFrontEnd</finalName>
   </build>
 </project>

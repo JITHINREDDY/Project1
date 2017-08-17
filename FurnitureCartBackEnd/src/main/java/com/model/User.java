@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 public class User implements Serializable
 {
 	/**
-	 * Attributes = 
+	 * Attributes = fields=variables
 	 */
 	private static final long serialVersionUID = 1L;
 	
@@ -41,7 +41,7 @@ public class User implements Serializable
 	@Id
 	private String zipcode;
 	
-	private String role="ROLE_ADMIN";// during security 
+	private String role="ROLE_ADMIN";// during spring security 
 
 	private boolean status=true;	
 	

@@ -20,10 +20,11 @@ public class UserDaoImpl implements UserDao
 { 
 	@Autowired
 	SessionFactory sessionFactory;
+	//Autowired is a process which is used to create a single instanc of the 
+	//class and bind it to your dispatcher servlet.
+	//autowiring is used to create singleton class
 
-
-	public UserDaoImpl(SessionFactory sessionFactory)
-	{
+	public UserDaoImpl(SessionFactory sessionFactory){
 		super();
 		this.sessionFactory=sessionFactory;
 	}

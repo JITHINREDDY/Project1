@@ -20,7 +20,7 @@ import com.daoImpl.UserDaoImpl;
 import com.model.User;
 
 @Configuration
-@ComponentScan("com")
+@ComponentScan("com.*")
 @EnableTransactionManagement
 public class hibernateConfig {
 	
@@ -70,13 +70,14 @@ public class hibernateConfig {
 	{
 		return new UserDaoImpl(sessionFactory);
 	}
-//	@Autowired
-//	@Bean(name = "transactionManager")
-//	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {
-//		HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
-//		System.out.println("Transaction");
-//		return transactionManager;
-//	}
+	
+	@Autowired
+	@Bean(name = "transactionManager")
+	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {
+		HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
+		System.out.println("Transaction Manager");
+		return transactionManager;
+	}
 	
 	
 }
